@@ -7,6 +7,6 @@ import java.util.Map;
  */
 public interface MovieCustomRepository {
 
-    Movie partialUpdate(String id, Map<String, Object> movie);
+    Movie partialUpdate(String id, Movie movie);
 
 }

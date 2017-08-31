@@ -1,12 +1,9 @@
 package com.guilherme.miguel.mongodb;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Miguel Guilherme
@@ -17,8 +14,6 @@ import java.util.Map;
 public class MovieController {
 
     private final MovieRepository movieRepository;
-
-    private final ObjectMapper objectMapper;
 
     @GetMapping
     public List<Movie> all() {
@@ -37,11 +32,9 @@ public class MovieController {
 
     @PatchMapping("{id}")
     public Movie update(@RequestBody Movie movie, @PathVariable String id) {
+        // TODO: Create MovieRequest without id
 
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        Map<String, Object> map = objectMapper.convertValue(movie, Map.class);
-
-        return movieRepository.partialUpdate(id, map);
+        return movieRepository.partialUpdate(id, movie);
     }
 
 }
