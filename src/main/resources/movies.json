@@ -1,6 +1,5 @@
 [
   {
-    "id": "59a7444978f4830b98972ddc",
     "name": "Star Wars: The Last Jedi",
     "director": "Rian Johnson",
     "writers": [
@@ -9,7 +8,6 @@
     ]
   },
   {
-    "id": "59a744e778f4830b98972ddd",
     "name": "The Dark Knight",
     "director": "Christopher Nolan",
     "writers": [
@@ -18,7 +16,6 @@
     ]
   },
   {
-    "id": "59a7452f78f4830b98972dde",
     "name": "Pulp Fiction",
     "director": "Quentin Tarantino",
     "writers": [
