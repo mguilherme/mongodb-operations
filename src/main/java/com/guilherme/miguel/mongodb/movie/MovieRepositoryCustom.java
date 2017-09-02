@@ -4,7 +4,7 @@ package com.guilherme.miguel.mongodb.movie;
 /**
  * @author Miguel Guilherme
  */
-public interface MovieCustomRepository {
+public interface MovieRepositoryCustom {
 
     Movie partialUpdate(String id, Movie movie);
 

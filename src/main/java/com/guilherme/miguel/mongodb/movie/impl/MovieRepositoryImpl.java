@@ -3,7 +3,8 @@ package com.guilherme.miguel.mongodb.movie.impl;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.guilherme.miguel.mongodb.movie.Movie;
-import com.guilherme.miguel.mongodb.movie.MovieCustomRepository;
+import com.guilherme.miguel.mongodb.movie.MovieRepository;
+import com.guilherme.miguel.mongodb.movie.MovieRepositoryCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -17,7 +18,7 @@ import java.util.Map;
  * @author Miguel Guilherme
  */
 @RequiredArgsConstructor
-public class MovieRepositoryImpl implements MovieCustomRepository {
+public class MovieRepositoryImpl implements MovieRepositoryCustom {
 
     private final MongoTemplate mongoTemplate;
 

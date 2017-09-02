@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 /**
  * @author Miguel Guilherme
  */
-public interface MovieRepository extends MongoRepository<Movie, String>, MovieCustomRepository {
+public interface MovieRepository extends MongoRepository<Movie, String>, MovieRepositoryCustom {
 }
