@@ -1,4 +1,4 @@
-package com.guilherme.miguel.mongodb.web.dto;
+package com.guilherme.miguel.mongodb.movie.web.dto;
 
 import lombok.Data;
 

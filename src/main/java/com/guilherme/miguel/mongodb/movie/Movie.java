@@ -1,4 +1,4 @@
-package com.guilherme.miguel.mongodb;
+package com.guilherme.miguel.mongodb.movie;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

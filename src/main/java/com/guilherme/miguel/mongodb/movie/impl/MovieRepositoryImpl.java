@@ -1,8 +1,11 @@
-package com.guilherme.miguel.mongodb;
+package com.guilherme.miguel.mongodb.movie.impl;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.guilherme.miguel.mongodb.movie.Movie;
+import com.guilherme.miguel.mongodb.movie.MovieCustomRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -30,9 +33,8 @@ public class MovieRepositoryImpl implements MovieCustomRepository {
 
         map.forEach(update::set);
 
-        mongoTemplate.updateFirst(query, update, "movies");
+        return mongoTemplate.findAndModify(query, update, new FindAndModifyOptions().returnNew(true), Movie.class);
 
-        return mongoTemplate.findOne(query, Movie.class);
     }
 
     private ObjectMapper getObjectMapper() {
