@@ -5,15 +5,17 @@ import lombok.Data;
 import java.util.List;
 
 /**
+ * Movie DTO for create / update purposes.
+ *
  * @author Miguel Guilherme
  */
 @Data
 public class CreateMovieRequest {
 
-	private String name;
+    private String name;
 
-	private String director;
+    private String director;
 
-	private List<String> writers;
+    private List<String> writers;
 
 }

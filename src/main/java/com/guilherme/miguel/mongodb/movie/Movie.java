@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 /**
+ * Movie entity.
+ *
  * @author Miguel Guilherme
  */
 @Data
