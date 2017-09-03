@@ -1,10 +1,12 @@
 package com.guilherme.miguel.mongodb.movie;
 
+import com.guilherme.miguel.mongodb.config.MapperConfig;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
@@ -18,6 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @DataMongoTest
 @RunWith(SpringRunner.class)
+@Import(MapperConfig.class)
 public class MovieRepositoryTest {
 
     @Autowired
