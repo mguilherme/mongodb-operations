@@ -44,11 +44,17 @@ public class MovieRepositoryTest {
 
         Movie updatedMovie = repository.partialUpdate(originalMovie.getId(), patch);
 
+        // Modified property
         assertThat(updatedMovie.getName()).isEqualTo("Interstellar");
 
+        // Unchanged properties
         assertThat(updatedMovie.getId()).isEqualTo(originalMovie.getId());
         assertThat(updatedMovie.getDirector()).isEqualTo(originalMovie.getDirector());
         assertThat(updatedMovie.getWriters()).isEqualTo(originalMovie.getWriters());
+
+        // Correct lastModifiedDate update
+        assertThat(updatedMovie.getLastModifiedDate()).isGreaterThan(originalMovie.getLastModifiedDate());
+        assertThat(updatedMovie.getLastModifiedDate()).isGreaterThan(updatedMovie.getCreatedDate());
     }
 
     /**
