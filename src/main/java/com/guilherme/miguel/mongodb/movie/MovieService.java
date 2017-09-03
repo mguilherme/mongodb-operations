@@ -43,7 +43,7 @@ public class MovieService {
      * @return the new persisted movie
      */
     public Movie create(CreateMovieRequest request) {
-        return movieRepository.save(toMovie(request));
+        return movieRepository.insert(toMovie(request));
     }
 
     /**
