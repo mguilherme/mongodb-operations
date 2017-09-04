@@ -14,7 +14,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Movie Repository test.
+ * {@link MovieRepository} test.
  *
  * @author Miguel Guilherme
  */

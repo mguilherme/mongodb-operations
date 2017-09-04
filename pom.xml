@@ -24,7 +24,7 @@
         <java.version>1.8</java.version>
 
         <mongobee.version>0.13</mongobee.version>
-        
+
         <flapdoodle.version>2.0.0</flapdoodle.version>
         <podam.version>7.1.0.RELEASE</podam.version>
     </properties>

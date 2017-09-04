@@ -4,9 +4,11 @@ import com.guilherme.miguel.mongodb.movie.Movie;
 import com.guilherme.miguel.mongodb.movie.MovieService;
 import com.guilherme.miguel.mongodb.movie.web.dto.CreateMovieRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Movie Controller.
@@ -26,8 +28,10 @@ public class MovieController {
     }
 
     @GetMapping("{id}")
-    public Movie show(@PathVariable String id) {
-        return movieService.get(id);
+    public ResponseEntity<Movie> show(@PathVariable String id) {
+        Optional<Movie> movie = movieService.get(id);
+
+        return movie.isPresent() ? ResponseEntity.ok(movie.get()) : ResponseEntity.notFound().build();
     }
 
     @PostMapping

@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Movie Service.
@@ -23,8 +24,8 @@ public class MovieService {
      * @param id the movie id
      * @return a movie instance
      */
-    public Movie get(String id) {
-        return movieRepository.findOne(id);
+    public Optional<Movie> get(String id) {
+        return Optional.ofNullable(movieRepository.findOne(id));
     }
 
     /**
